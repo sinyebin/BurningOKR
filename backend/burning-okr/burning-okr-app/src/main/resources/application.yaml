@@ -23,9 +23,9 @@ spring:
 system:
   configuration:
     api-endpoint: '/api'
-    oidc-admin-group-name: ''
-    client-id: ''
-    issuer-uri: ''
+    oidc-admin-group-name: 'burning-okr-admin'
+    client-id: 'burning-okr-client'
+    issuer-uri: 'http://localhost:9090/realms/burning-okr'
     scopes:
       - 'profile'
       - 'offline_access'
@@ -33,3 +33,4 @@ system:
       - 'email'
     strict-discovery-document-validation: true
     demo-mode: false
+

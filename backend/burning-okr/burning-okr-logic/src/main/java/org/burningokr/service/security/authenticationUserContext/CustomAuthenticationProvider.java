@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
   private final JwtDecoder jwtDecoder;
-  private final AuthenticationUserContextService authenticationUserContextService;
+  private final AuthenticationUserContextServiceKeycloak authenticationUserContextService;
 
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {

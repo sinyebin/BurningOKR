@@ -3,13 +3,17 @@ package org.burningokr.service.revision;
 import lombok.RequiredArgsConstructor;
 import org.burningokr.model.revision.RevisionInformation;
 import org.burningokr.service.security.authenticationUserContext.AuthenticationUserContextService;
+import org.burningokr.service.security.authenticationUserContext.AuthenticationUserContextServiceKeycloak;
 import org.hibernate.envers.EntityTrackingRevisionListener;
 import org.hibernate.envers.RevisionType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+@Component
 public class RevisionListener
         implements org.hibernate.envers.RevisionListener, EntityTrackingRevisionListener {
-  private final AuthenticationUserContextService authenticationUserContextService;
+  @Autowired
+  private AuthenticationUserContextServiceKeycloak authenticationUserContextService;
 
   @Override
   public void newRevision(Object revisionEntity) {
