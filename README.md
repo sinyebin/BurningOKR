@@ -1,6 +1,25 @@
 <p align="center"><img src="/docs/ci/Logo_burningOKR_RGB_web.png" width="35%" height="35%" alt="Burning OKR"/></p>
 
 <br/><br/><br/>
+# 실행 방법
+1. backend -> burning-okr 폴더 열기
+2. .run 폴더 Start Backend.run.xml 파일 열기
+3. 위에 떠있는 Open Run/Debug Configuration 클릭
+4. OK 클릭 후 위에 초록 세모 클릭
+
+# 변경사항
+1. backend -> burning-okr-app -> src -> main -> java -> org -> burningokr -> config -> JwtConfig.java
+ + JwtDecode 추가
+2. backend -> burning-okr-app -> src -> main -> resources -> application.yaml
+ +     oidc-admin-group-name, client-id, issuer-uri 추가
+3. backend -> burning-okr-app -> src -> main -> resources -> application-local.yaml 추가
+ + provider 추가
+ + postgresql url, username, password 변경
+4. backend -> burning-okr-logic -> src -> main -> java -> org -> burningokr -> service -> revision -> RevisionListener.java
+ + @RequiresConfiguration -> @Component 변경
+ + AuthenticationUserContextService -> AuthenticationUserContextServiceKeycloak 변경
+5. backend -> burning-okr-logic -> src -> main -> java -> org -> burningokr -> service -> security -> authenticationUserContext -> CustomAuthenticationProvider.java
+ + AuthenticationUserContextService -> AuthenticationUserContextServiceKeycloak 변경
 
 # BurningOKR 2.0
 
